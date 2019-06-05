@@ -4,7 +4,7 @@
 class Menu
 {
 private:
-	PhotoManager *m_pm;
+	PhotoManager m_pm;
 public:
 	Menu();
 	~Menu();

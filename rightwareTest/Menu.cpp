@@ -2,12 +2,10 @@
 
 Menu::Menu()
 {
-	m_pm = new PhotoManager();
 }
 
 Menu::~Menu()
 {
-	delete m_pm;
 }
 
 void Menu::printMenu()
@@ -32,7 +30,7 @@ void Menu::handleCommand()
 			string path;
 			cout << "Enter a path to a folder (e.g., C:/Users/PC/Pictures): ";
 			getline(cin, path);
-			m_pm->readImageFiles(path);
+			m_pm.readImageFiles(path);
 			this->printMenu();
 		}
 		else if (command == "2") {
@@ -43,8 +41,8 @@ void Menu::handleCommand()
 			cout << "Enter a path to second image: ";
 			getline(cin, path2);
 			cout << "Combining images ..." << endl;
-			m_pm->horizontalCombine(path1, path2);
-			m_pm->verticalCombine(path1, path2);
+			m_pm.horizontalCombine(path1, path2);
+			m_pm.verticalCombine(path1, path2);
 		}
 		else if (command == "x") {
 			break;
